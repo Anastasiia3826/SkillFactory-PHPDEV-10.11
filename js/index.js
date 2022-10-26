@@ -11,6 +11,7 @@ const colorInput = document.querySelector('.color__input'); // поле с на�
 const weightInput = document.querySelector('.weight__input'); // поле с весом
 const addActionButton = document.querySelector('.add__action__btn'); // кнопка добавления
 
+
 // список фруктов в JSON формате
 let fruitsJSON = `[
   {"kind": "Мангустин", "color": "фиолетовый", "weight": 13},
@@ -18,7 +19,7 @@ let fruitsJSON = `[
   {"kind": "Личи", "color": "розово-красный", "weight": 17},
   {"kind": "Карамбола", "color": "желтый", "weight": 28},
   {"kind": "Тамаринд", "color": "светло-коричневый", "weight": 22}
-]`;
+]`
 
 // преобразование JSON в объект JavaScript
 let fruits = JSON.parse(fruitsJSON);
@@ -47,23 +48,28 @@ const getRandomInt = (min, max) => {
 };
 
 // перемешивание массива
-const shuffleFruits = () => {
-  let result = [];
 
-  // ATTENTION: сейчас при клике вы запустите бесконечный цикл и браузер зависнет
-  while (fruits.length > 0) {
-    // TODO: допишите функцию перемешивания массива
-    //
-    // Подсказка: находим случайный элемент из fruits, используя getRandomInt
-    // вырезаем его из fruits и вставляем в result.
-    // ex.: [1, 2, 3], [] => [1, 3], [2] => [3], [2, 1] => [], [2, 1, 3]
-    // (массив fruits будет уменьшатся, а result заполняться)
-  }
+
+const shuffleFruits = () => {
+let result = [];
+
+while (fruits.length > 0){
+let randomFruit = getRandomInt(0, fruits.length -1);
+console.log (randomFruit);
+let newArrFruit = fruits.splice(randomFruit, 1);
+console.log(newArrFruit);
+result.splice(0, 0, newArrFruit);
+console.log(result);
+
+}
 
   fruits = result;
+  console.log(fruits);
+
 };
 
-shuffleButton.addEventListener('click', () => {
+shuffleButton.addEventListener('click', () => 
+{
   shuffleFruits();
   display();
 });
@@ -72,7 +78,11 @@ shuffleButton.addEventListener('click', () => {
 
 // фильтрация массива
 const filterFruits = () => {
-  fruits.filter((item) => {
+  fruits.filter(() => {
+    const minweight = document.getElementById('.minweight__input');
+    console.log(minweight);
+    const maxweight = document.getElementById('.maxweight__input');
+    console.log(maxweight);
     // TODO: допишите функцию
   });
 };

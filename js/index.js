@@ -12,6 +12,7 @@ const weightInput = document.querySelector('.weight__input'); // поле с в�
 const addActionButton = document.querySelector('.add__action__btn'); // кнопка добавления
 
 
+
 // список фруктов в JSON формате
 let fruitsJSON = `[
   {"kind": "Мангустин", "color": "фиолетовый", "weight": 13},
@@ -21,13 +22,19 @@ let fruitsJSON = `[
   {"kind": "Тамаринд", "color": "светло-коричневый", "weight": 22}
 ]`
 
+console.log(fruitsJSON);
+
+
 // преобразование JSON в объект JavaScript
 let fruits = JSON.parse(fruitsJSON);
+
+console.log(fruitsJSON);
 
 /*** ОТОБРАЖЕНИЕ ***/
 
 // отрисовка карточек
 const display = () => {
+  
   // TODO: очищаем fruitsList от вложенных элементов,
   // чтобы заполнить актуальными данными из fruits
 
@@ -49,11 +56,11 @@ const getRandomInt = (min, max) => {
 
 // перемешивание массива
 
-
 const shuffleFruits = () => {
 let result = [];
 
 while (fruits.length > 0){
+
 let randomFruit = getRandomInt(0, fruits.length -1);
 console.log (randomFruit);
 let newArrFruit = fruits.splice(randomFruit, 1);

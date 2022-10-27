@@ -30,11 +30,19 @@ let fruits = JSON.parse(fruitsJSON);
 
 console.log(fruitsJSON);
 
+// Проверила доступ к элементам массива - тут все ок
+//alert( fruits[0].kind ); 
+//alert( fruits[1].kind );
+//alert( fruits[2].kind );
+//alert( fruits[3].kind );
+//alert( fruits[4].kind );
+
+
 /*** ОТОБРАЖЕНИЕ ***/
 
 // отрисовка карточек
 const display = () => {
-  
+
   // TODO: очищаем fruitsList от вложенных элементов,
   // чтобы заполнить актуальными данными из fruits
 
